@@ -6,16 +6,36 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme moonfly]])
+    --  vim.cmd([[colorscheme moonfly]])
     end
   },
-  -- {
-  --  "EdenEast/nightfox.nvim",
-  --  config = function()
-  --    require('nightfox')
-  --    vim.cmd("colorscheme nightfox")
-  --  end
-  --},
+  {'romgrk/barbar.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function() vim.g.barbar_auto_setup = false end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  },
+  {
+   "EdenEast/nightfox.nvim",
+   config = function()
+    require('nightfox')
+     vim.cmd("colorscheme carbonfox")
+   end
+ },
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('plugins.lualine')
+    end
+  },
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
