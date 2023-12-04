@@ -1,5 +1,6 @@
 require("lazy").setup({
   "folke/which-key.nvim",
+  'nvim-treesitter/nvim-treesitter',
   {
     "bluz71/vim-moonfly-colors",
     name = "moonfly",
