@@ -23,3 +23,5 @@ configs.solidity = {
 }
 
 lspconfig.solidity.setup {}
+
+

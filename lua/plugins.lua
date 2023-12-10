@@ -7,12 +7,14 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-    --  vim.cmd([[colorscheme moonfly]])
+      --  vim.cmd([[colorscheme moonfly]])
     end
   },
-  {'romgrk/barbar.nvim',
+  { "tikhomirov/vim-glsl" },
+  {
+    'romgrk/barbar.nvim',
     dependencies = {
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
@@ -28,12 +30,12 @@ require("lazy").setup({
     "OmniSharp/Omnisharp-vim"
   },
   {
-   "EdenEast/nightfox.nvim",
-   config = function()
-    require('nightfox')
-     vim.cmd("colorscheme carbonfox")
-   end
- },
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require('nightfox')
+      vim.cmd("colorscheme carbonfox")
+    end
+  },
   {
     'nvim-lualine/lualine.nvim',
     config = function()
@@ -101,5 +103,29 @@ require("lazy").setup({
     config = function()
       require("plugins.telescope")
     end
-  }
-})
+  },
+  {
+    "nvim-telescope/telescope-dap.nvim",
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      "theHamsta/nvim-dap-virtual-text"
+    },
+    config       = function()
+      require("plugins.dap")
+    end
+  },
+  {
+    "FeiyouG/commander.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("plugins.commander")
+    end
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require("plugins.toggleterm")
+    end
+  },
+});
