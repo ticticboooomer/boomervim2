@@ -31,3 +31,8 @@ vim.keymap.set("n", "<F8>", dap_step_over, opts)
 vim.keymap.set("n", "<F7>", dap_step_into, opts)
 vim.keymap.set("n", "<F9>", dap_continue, opts)
 
+local function jdtls_organise_imports()
+  require("jdtls").organize_imports()
+end
+
+vim.keymap.set("n", "<C-O>", jdtls_organise_imports, opts)

@@ -23,5 +23,5 @@ configs.solidity = {
 }
 
 lspconfig.solidity.setup {}
-
+lspconfig.omnisharp.setup {}
 

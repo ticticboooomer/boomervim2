@@ -128,4 +128,7 @@ require("lazy").setup({
       require("plugins.toggleterm")
     end
   },
+  {
+    'mfussenegger/nvim-jdtls'
+  }
 });
